@@ -68,7 +68,11 @@ class TicketitServiceProvider extends ServiceProvider
                 $editor_enabled = Setting::grab('editor_enabled');
                 $codemirror_enabled = Setting::grab('editor_html_highlighter');
                 $codemirror_theme = Setting::grab('codemirror_theme');
-                $view->with(compact('master', 'email', 'tools', 'editor_enabled', 'codemirror_enabled', 'codemirror_theme'));
+                $main_route = Setting::grab('main_route');
+                $main_route_path = Setting::grab('main_route_path');
+                $admin_route = Setting::grab('admin_route');
+                $admin_route_path = Setting::grab('admin_route_path');
+                $view->with(compact('master', 'email', 'tools', 'editor_enabled', 'codemirror_enabled', 'codemirror_theme','main_route','main_route_path','admin_route','admin_route_path'));
             });
 
             //inlude font awesome css or not
