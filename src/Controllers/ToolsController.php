@@ -56,4 +56,16 @@ class ToolsController extends Controller
 
         return false;
     }
+
+    /**
+     * Determine if the current request name matches.
+     *
+     * @param $name
+     *
+     * @return bool
+     */
+    public function isCurrentRouteName($name)
+    {
+        return request()->route()->getName() == $name;
+    }
 }
