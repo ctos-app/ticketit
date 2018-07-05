@@ -34,6 +34,8 @@ class TicketitServiceProvider extends ServiceProvider
         }
         $installer = new InstallController();
 
+        require __DIR__.'/Helpers/helpers.php';
+
         // if a migration or new setting is missing scape to the installation
         if (empty($installer->inactiveMigrations()) && !$installer->inactiveSettings()) {
             // Send the Agent User model to the view under $u

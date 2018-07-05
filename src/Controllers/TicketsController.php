@@ -228,8 +228,8 @@ class TicketsController extends Controller
         $ticket->save();
 
         session()->flash('status', trans('ticketit::lang.the-ticket-has-been-created'));
-        $main_route = Setting::grab('main_route');
-        return redirect(route($main_route.'.index'));
+
+        return redirect()->route(getNamedRouteFromSetting('main_route', '', 'index'));
     }
 
     /**

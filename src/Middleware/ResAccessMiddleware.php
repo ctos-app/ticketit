@@ -54,7 +54,8 @@ class ResAccessMiddleware
             return $next($request);
         }
 
-        return redirect()->action('\Kordy\Ticketit\Controllers\TicketsController@index')
+
+        return redirect()->route(getNamedRouteFromSetting('main_route', '', 'index'))
             ->with('warning', trans('ticketit::lang.you-are-not-permitted-to-access'));
     }
 }
